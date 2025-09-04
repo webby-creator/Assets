@@ -1,0 +1,284 @@
+/* #name is used to find the wanted styling */
+/* Updated to use semantic theme color variables */
+
+#themeBaseMenu {
+    /* Using surface for the main bar and dropdown */
+    --theme-menu-bar-bg-color: var(--theme-color-surface);
+    --theme-menu-dropdown-bg-color: var(--theme-color-surface);
+
+    --theme-menu-bar-border-radius: 8px;
+    --theme-menu-bar-gap: 0px;
+
+    /* Default item color on the surface background */
+    --theme-menu-item-color: var(--theme-color-on-surface);
+    --theme-menu-item-padding: 13px 15px;
+    --theme-menu-item-text-align: center;
+    --theme-menu-item-font-size: 15px;
+
+    /* Selected state using primary colors */
+    --theme-menu-item-color-selected: var(--theme-color-on-primary);
+    --theme-menu-item-bg-color-selected: var(--theme-color-primary);
+
+    /* Hover state using a subtle surface variant or dedicated hover color */
+    /* Option 1: Assume --theme-color-surface-hover exists (e.g., rgba(var(--theme-color-on-surface-rgb), 0.08)) */
+    /* --theme-menu-item-bg-color-hover: var(--theme-color-surface-hover); */
+    /* Option 2: Use surface if hover color isn't defined separately */
+    --theme-menu-item-bg-color-hover: var(--theme-color-surface);
+
+    display: flex;
+}
+
+#themeBaseStack {
+    width: max-content;
+    height: max-content;
+    display: flex;
+}
+
+/* MULTI STATE BOX */
+#themeBaseMultiStateBox {
+    display: grid;
+    width: 50%;
+    height: max-content;
+}
+
+#themeBaseMultiStateBoxItem {
+    width: 100%;
+    height: 100px;
+
+    --cont-display: grid;
+    --cont-grid-template-columns: 100%;
+    --cont-grid-template-rows: 1fr;
+}
+
+/* REPEATER & REPEATER ITEM */
+#themeBaseRepeater {
+    display: grid;
+    width: 50%;
+    height: max-content;
+    row-gap: 10px;
+    grid-auto-flow: row;
+    grid-auto-rows: minmax(0, 1fr);
+}
+
+#themeBaseRepeaterItem {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+/* ACCORDION & ACCORDION ITEM */
+#themeBaseAccordion {
+    display: grid;
+    gap: 5px;
+    width: 50%;
+    height: max-content;
+    padding: 1rem;
+    border-radius: 8px;
+    /* Using surface for the accordion background */
+    background-color: var(--theme-color-surface);
+}
+
+#themeBaseAccordionItem {
+    width: 100%;
+    height: max-content;
+    /* Text color should contrast with the accordion background */
+    color: var(--theme-color-on-surface);
+}
+
+#themeBaseAccordionItem .accordion-control {
+    width: 100%;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    text-align: start;
+    border-radius: 8px;
+    /* Ensure control text color is explicitly set if needed */
+    color: inherit;
+    /* Inherits from #themeBaseAccordionItem */
+}
+
+#themeBaseAccordionItem .accordion-control:hover {
+    /* Using a theme-based hover background */
+    /* Option 1: Assume --theme-color-surface-hover exists */
+    /* background-color: var(--theme-color-surface-hover); */
+    /* Option 2: Use a slightly modified surface or primary with alpha */
+    background-color: rgba(var(--theme-color-primary-rgb), 0.08);
+    /* Assumes --theme-color-primary-rgb exists */
+    /* Fallback if RGB isn't available: */
+    /* background-color: var(--theme-color-surface); */
+    /* Or another subtle color */
+}
+
+#themeBaseAccordionItem .accordion-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(300px, max-content);
+    padding: 0.5rem 1rem;
+    /* Panel content text color should contrast with its background (which is the accordion's bg) */
+    color: var(--theme-color-on-surface);
+}
+
+/* SECTION */
+#themeBaseSection {
+    width: 100%;
+    min-height: 40vh;
+    margin: 0px;
+    padding: 0px;
+    /* Default section background and text */
+    background-color: var(--theme-color-background);
+    color: var(--theme-color-on-background);
+
+    --cont-display: grid;
+    --cont-grid-template-columns: 100%;
+    --cont-grid-template-rows: 1fr;
+}
+
+/* CONTAINER */
+#themeBaseContainer {
+    width: 100%;
+    min-height: 300px;
+    /* Containers often sit on background, but might have their own surface color if distinct */
+    /* Assuming transparent by default, inheriting from Section */
+    background-color: var(--theme-color-surface);
+    /* color: var(--theme-color-on-surface); */
+
+    --cont-display: grid;
+    --cont-grid-template-columns: 100%;
+    --cont-grid-template-rows: 1fr;
+}
+
+/* LIGHTBOX vert and horiz centered */
+#themeBaseLightbox {
+    width: 400px;
+    min-height: 400px;
+    /* Lightbox is typically a distinct surface */
+    background-color: var(--theme-color-surface);
+    color: var(--theme-color-on-surface);
+    padding: 1rem;
+    place-self: center;
+
+    --cont-display: grid;
+    --cont-grid-template-columns: 1fr;
+    --cont-grid-template-rows: 1fr;
+    /* Consider using a theme variable for border-radius */
+}
+
+/* TEXT */
+#themeBaseText {
+    place-self: start;
+    width: 33.3%;
+    height: max-content;
+    /* Default text color inherited from parent (Section/Container/Lightbox) */
+    /* color: var(--theme-color-on-surface); */
+    /* Or on-background */
+}
+
+/* IMAGE */
+#themeBaseImage {
+    width: 35%;
+}
+
+#themeBaseImage .img {
+    width: 100%;
+    height: 100%;
+}
+
+/* SVG */
+#themeBaseVectorArt {
+    width: 250px;
+    height: min-content;
+    /* SVG fill/stroke should ideally be controlled by theme colors */
+    /* color: var(--theme-color-on-surface); */
+    /* Use 'currentColor' in SVG for inheritance */
+}
+
+/* FORM */
+#themeBaseForm {
+    width: 50%;
+    height: max-content;
+}
+
+/* WIDGET */
+#themeBaseWidget {
+    width: 50%;
+    height: max-content;
+    display: flex;
+}
+
+/* BUTTON */
+#themeBaseButton {
+    /* Assuming the base button is a primary button */
+    /* Set background/text color here or expect it from component-specific theme */
+    /* background-color: var(--theme-color-primary); */
+    /* color: var(--theme-color-on-primary); */
+
+    /* Icon color for primary button */
+    --theme-button-icon-color: var(--theme-color-on-primary);
+
+    --theme-button-border-radius-hover: 0.375rem;
+    --theme-button-border-radius-active: 0.375rem;
+
+    width: max-content;
+    height: max-content;
+
+    display: flex;
+}
+
+/* INPUT */
+#themeBaseInputDefault {
+    width: max-content;
+    height: max-content;
+
+    --theme-input-font-weight: 400;
+    --theme-input-text-align: start;
+    --theme-input-font-size: 1rem;
+    --theme-input-line-height: 1.5;
+    --theme-input-padding: 0.375rem 0.75rem;
+
+    /* Using surface for input background */
+    --theme-input-bg-color: var(--theme-color-surface);
+    /* Text color contrasting with surface */
+    --theme-input-text-color: var(--theme-color-on-surface);
+    --theme-input-border-radius: 5px;
+    /* Consider theme variable */
+
+    /* Standard border using outline color */
+    --theme-input-border-top: 1px solid var(--theme-color-outline);
+    --theme-input-border-bottom: 1px solid var(--theme-color-outline);
+    --theme-input-border-left: 1px solid var(--theme-color-outline);
+    --theme-input-border-right: 1px solid var(--theme-color-outline);
+
+    /* Focus border using primary color */
+    --theme-input-border-top-focus: 1px solid var(--theme-color-primary);
+    --theme-input-border-bottom-focus: 1px solid var(--theme-color-primary);
+    --theme-input-border-left-focus: 1px solid var(--theme-color-primary);
+    --theme-input-border-right-focus: 1px solid var(--theme-color-primary);
+}
+
+#themeBaseInputCheckbox {
+    width: max-content;
+    height: max-content;
+
+    /* Standard border using outline color */
+    --theme-input-border-top: 1px solid var(--theme-color-outline);
+    --theme-input-border-bottom: 1px solid var(--theme-color-outline);
+    --theme-input-border-left: 1px solid var(--theme-color-outline);
+    --theme-input-border-right: 1px solid var(--theme-color-outline);
+
+    /* Focus border using primary color */
+    /* Note: Checkboxes often use accent/primary for the checkmark itself on focus/check */
+    --theme-input-border-top-focus: 1px solid var(--theme-color-primary);
+    --theme-input-border-bottom-focus: 1px solid var(--theme-color-primary);
+    --theme-input-border-left-focus: 1px solid var(--theme-color-primary);
+    --theme-input-border-right-focus: 1px solid var(--theme-color-primary);
+}
+
+#themeBaseInputDropdown {
+    width: max-content;
+    height: max-content;
+    /* Apply similar styling as InputDefault if needed */
+    /* background-color: var(--theme-color-surface); */
+    /* color: var(--theme-color-on-surface); */
+    /* border: 1px solid var(--theme-color-outline); */
+}
