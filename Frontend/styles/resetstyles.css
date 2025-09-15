@@ -1,0 +1,68 @@
+/* RENDERER ONLY CSS RESETS AND FIXES */
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    height: auto !important;
+    min-height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+iframe {
+    outline: none;
+    border: none;
+}
+
+:any-link {
+    text-decoration: unset;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-block: unset;
+}
+
+:where(button) {
+    padding-inline: unset;
+    padding-block: unset;
+    border: unset;
+}
+
+
+p,
+dl,
+multicol {
+    margin-block-start: unset;
+    margin-block-end: unset;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+textarea:invalid,
+input:invalid {
+    outline: 2px solid red;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}

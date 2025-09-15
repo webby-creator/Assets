@@ -1,0 +1,369 @@
+.formi-contents {
+    --form-global-font: Verdana;
+    --form-global-text-color: black;
+    --form-global-button-color: black;
+    --form-global-button-text-color: white;
+    /* Ref --form-background-color */
+    /* Ref --form-page-background-color */
+    --form-global-border-radius: 4px;
+    --form-global-alignment: left;
+    --form-global-shadow: initial;
+
+    --form-layout-width: 650px;
+    --form-layout-top-padding: 20px;
+    --form-layout-bottom-padding: 20px;
+    --form-layout-left-padding: 20px;
+    --form-layout-right-padding: 20px;
+    --form-layout-direction: left;
+    --form-page-top-padding: 40px;
+    --form-page-bottom-padding: 40px;
+
+    --form-background-color: #fdfdfa;
+    --form-border-color: transparent;
+    --form-border-style: none;
+    --form-border-width: 0px;
+    --form-shadow: initial;
+    --form-page-background-color: rgba(244, 245, 245, .78);
+
+    --form-header-placement: top;
+    --form-header-font: var(--form-global-font);
+    --form-header-font-weight: bold;
+    --form-header-font-style: normal;
+    --form-header-font-size: 25px;
+    --form-header-line-height: 1;
+    --form-header-text-color: var(--form-global-text-color);
+    --form-header-top-margin: 10px;
+    --form-header-bottom-margin: 8px;
+    --form-header-required-color: orange;
+
+    --form-label-placement: top;
+    --form-label-font: var(--form-global-font);
+    --form-label-font-weight: bold;
+    --form-label-font-style: normal;
+    --form-label-font-size: 17px;
+    --form-label-line-height: 1;
+    --form-label-text-color: var(--form-global-text-color);
+    --form-label-top-margin: 10px;
+    --form-label-bottom-margin: 8px;
+    --form-label-required-color: orange;
+    --form-instructions-placement: below;
+    --form-instructions-font: var(--form-global-font);
+    --form-instructions-font-weight: normal;
+    --form-instructions-font-style: normal;
+    --form-instructions-font-size: 12px;
+    --form-instructions-line-height: 1;
+    --form-instructions-text-color: var(--form-global-text-color);
+    --form-instructions-top-margin: 4px;
+    --form-instructions-bottom-margin: 0px;
+
+    --form-input-background-color: rgba(229, 229, 230, .56);
+    --form-input-border-color: rgba(91, 94, 103, .37);
+    --form-input-border-style: solid;
+    --form-input-border-width: 1px;
+    --form-input-font: var(--form-global-font);
+    --form-input-font-weight: normal;
+    --form-input-font-style: normal;
+    --form-input-font-size: 14px;
+    --form-input-line-height: 1;
+    --form-input-text-color: var(--form-global-text-color);
+    --form-input-horizontal-padding: 8px;
+    --form-input-vertical-padding: 14px;
+
+    --form-field-horizontal-padding: 8px;
+    --form-field-vertical-padding: 8px;
+    --form-field-fields-spacing: 16px;
+    --form-field-label-width: 5;
+    /* TODO: Hover/Focus bg,border,text-color,label-color,instructions-color */
+
+    --form-error-font: var(--form-global-font);
+    --form-error-font-weight: normal;
+    --form-error-font-style: normal;
+    --form-error-font-size: 12px;
+    --form-error-line-height: 1;
+    --form-error-text-color: red;
+    --form-error-top-margin: 4px;
+    --form-error-bottom-margin: 0px;
+    --form-error-input-background-color: rgba(255, 0, 0, .1);
+    --form-error-input-border-color: red;
+    --form-error-input-text-color: var(--form-global-text-color);
+    --form-error-input-label-color: var(--form-global-text-color);
+    --form-error-input-instructions-color: #aaaaaa;
+
+    --form-choices-radio-right-margin: 8px;
+    --form-choices-checkbox-right-margin: 8px;
+
+    --form-button-border-color: transparent;
+    --form-button-border-style: solid;
+    --form-button-border-width: 1px;
+    --form-button-font: var(--form-global-font);
+    --form-button-font-weight: bold;
+    --form-button-font-style: normal;
+    --form-button-font-size: 17px;
+    --form-button-line-height: 2;
+    --form-button-text-color: var(--form-global-button-text-color);
+    --form-button-horizontal-padding: 40px;
+    --form-button-vertical-padding: 8px;
+    /* TODO: Primary/Secondary */
+
+    text-align: var(--form-global-alignment);
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.formi-contents[data-visual="page"] {
+    background-color: var(--form-page-background-color);
+    padding-top: var(--form-page-top-padding);
+    padding-bottom: var(--form-page-bottom-padding);
+}
+
+.formi-contents> :not([hidden])~ :not([hidden]) {
+    margin-top: 2rem;
+}
+
+/* data-instructions-text-alignment="left" */
+/* data-label-text-alignment="left" */
+/* data-text-direction="ltr" */
+/* data-label-placement="top" */
+
+.formi-contents .formi-layer {
+    width: var(--form-layout-width);
+    background-color: var(--form-background-color);
+    padding-top: var(--form-layout-top-padding);
+    padding-bottom: var(--form-layout-bottom-padding);
+    padding-left: var(--form-layout-left-padding);
+    padding-right: var(--form-layout-right-padding);
+
+    border-radius: var(--form-global-border-radius);
+    border-color: var(--form-border-color);
+    border-style: var(--form-border-style);
+    border-width: var(--form-border-width);
+
+    /* --form-shadow: initial; */
+}
+
+.formi-contents .formi-row {
+    display: flex;
+    min-height: 0.5rem;
+}
+
+.formi-contents .formi-row-inner {
+    flex-grow: 1;
+    display: grid;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.formi-contents .formi-item-container {
+    height: max-content;
+}
+
+.formi-contents .formi-item-row {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formi-contents .formi-item-rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.formi-contents .formi-item-rows .duplicator-remove {
+    background: #b30000;
+    padding: 4px;
+    width: max-content;
+    font-size: 0.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+.formi-contents .formi-item-rows:only-of-type .duplicator-remove {
+    display: none;
+}
+
+.formi-contents .formi-image {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+}
+
+.formi-contents .formi-text[data-text-size="h3"] {
+    font-family: var(--form-header-font);
+    font-weight: var(--form-header-font-weight);
+    font-style: var(--form-header-font-style);
+    font-size: var(--form-header-font-size);
+    line-height: var(--form-header-line-height);
+    color: var(--form-header-text-color);
+    margin-top: var(--form-header-top-margin);
+    margin-bottom: var(--form-header-bottom-margin);
+}
+
+.formi-contents .formi-label,
+.formi-contents .formi-text[data-text-size="label"] {
+    font-family: var(--form-label-font);
+    font-weight: var(--form-label-font-weight);
+    font-style: var(--form-label-font-style);
+    font-size: var(--form-label-font-size);
+    line-height: var(--form-label-line-height);
+    color: var(--form-label-text-color);
+    margin-top: var(--form-label-top-margin);
+    margin-bottom: var(--form-label-bottom-margin);
+}
+
+.formi-contents .formi-label .required {
+    color: var(--form-label-required-color);
+    font-weight: bold;
+}
+
+.formi-contents .formi-instruction,
+.formi-contents .formi-text[data-text-size="instruction"] {
+    font-family: var(--form-instructions-font);
+    font-weight: var(--form-instructions-font-weight);
+    font-style: var(--form-instructions-font-style);
+    font-size: var(--form-instructions-font-size);
+    line-height: var(--form-instructions-line-height);
+    color: var(--form-instructions-text-color);
+    margin-top: var(--form-instructions-top-margin);
+    margin-bottom: var(--form-instructions-bottom-margin);
+}
+
+.formi-contents .formi-input {
+    background: var(--form-input-background-color);
+    color: var(--form-input-text-color);
+
+    border-radius: var(--form-global-border-radius);
+    border-color: var(--form-input-border-color);
+    border-style: var(--form-input-border-style);
+    border-width: var(--form-input-border-width);
+
+    font-family: var(--form-input-font);
+    font-weight: var(--form-input-font-weight);
+    font-style: var(--form-input-font-style);
+    font-size: var(--form-input-font-size);
+    line-height: var(--form-input-line-height);
+
+    padding: var(--form-input-vertical-padding) var(--form-input-horizontal-padding);
+}
+
+.formi-contents .formi-submit {
+    background-color: var(--form-global-button-color);
+    color: var(--form-button-text-color);
+
+    border-radius: var(--form-global-border-radius);
+    border-color: var(--form-button-border-color);
+    border-style: var(--form-button-border-style);
+    border-width: var(--form-button-border-width);
+
+    font-family: var(--form-button-font);
+    font-weight: var(--form-button-font-weight);
+    font-style: var(--form-button-font-style);
+    font-size: var(--form-button-font-size);
+    line-height: var(--form-button-line-height);
+
+    padding: var(--form-button-vertical-padding) var(--form-button-horizontal-padding);
+
+    cursor: pointer;
+}
+
+.formi-contents .formi-button-secondary {
+    background-color: #4a4a4a;
+    color: var(--form-button-text-color);
+
+    border-radius: var(--form-global-border-radius);
+    border-color: var(--form-button-border-color);
+    border-style: var(--form-button-border-style);
+    border-width: var(--form-button-border-width);
+
+    font-family: var(--form-button-font);
+    font-weight: var(--form-button-font-weight);
+    font-style: var(--form-button-font-style);
+    font-size: var(--form-button-font-size);
+    line-height: var(--form-button-line-height);
+
+    padding: var(--form-button-vertical-padding) var(--form-button-horizontal-padding);
+
+    cursor: pointer;
+}
+
+.formi-contents .formi-embedded-form {
+    display: grid;
+    height: 7rem;
+    vertical-align: middle;
+    align-items: center;
+    cursor: pointer;
+}
+
+.formi-embedded-form:has(input:invalid) {
+    border: 2px solid red;
+}
+
+.formi-embedded-form:has(input:invalid) .form-status.incomplete {
+    display: block;
+}
+
+.formi-embedded-form:has(input:valid) .form-status.complete {
+    display: block;
+}
+
+.formi-embedded-form .container-centered {
+    display: flex;
+    height: max-content;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    pointer-events: none;
+}
+
+.formi-embedded-form .embedded-form-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.formi-embedded-form .embedded-form-info h4 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.formi-embedded-form .embedded-form-info .form-status {
+    display: none;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.formi-embedded-form .embedded-form-info .form-status-text {
+    color: rgb(220, 38, 38);
+    font-weight: bold;
+}
+
+.formi-embedded-form .embedded-form-button {
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #333;
+}
+
+.formi-contents .formi-signature {
+    display: grid;
+    height: 7rem;
+    vertical-align: middle;
+    align-items: center;
+}
+
+.formi-contents .formi-signature-preset {
+    display: grid;
+    height: max-content;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.formi-contents .formi-label {
+    display: flex;
+    align-items: center;
+}
+
+.formi-contents .formi-label> :not([hidden])~ :not([hidden]) {
+    margin-left: 0.5rem;
+}
