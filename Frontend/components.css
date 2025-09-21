@@ -263,6 +263,8 @@ body {
     overflow-x: clip;
     --cont-row-gap: 0px;
     --cont-column-gap: 0px;
+    --theme-container-border: none;
+    --theme-container-border-radius: 0px;
 }
 
 .component[data-type="text"]>h1,
