@@ -260,7 +260,6 @@ body {
 
 :where(.component[data-type="container"]) {
     position: relative;
-    overflow-x: clip;
     --cont-row-gap: 0px;
     --cont-column-gap: 0px;
     --theme-container-border: none;
