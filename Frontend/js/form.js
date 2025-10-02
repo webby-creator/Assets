@@ -92,6 +92,8 @@ document.addEventListener('submit', e => {
                         viewingEmbeddedFormInfo.input.value = e.id;
                         viewingEmbeddedFormInfo.form.remove();
                         viewingEmbeddedFormInfo = null;
+                    } else {
+                        // TODO: Add `e.id` to website cookies for 2 hours (default) based on form submit url.
                     }
                 })
                 .catch(e => {
@@ -158,6 +160,9 @@ function isLayerValid(formElement, layer) {
     return true;
 }
 
+/**
+ * Are we viewing a form inside a form?
+ */
 let viewingEmbeddedFormInfo = null;
 
 /**

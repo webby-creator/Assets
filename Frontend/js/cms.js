@@ -33,6 +33,10 @@ for (const data of script.datasets) {
         .catch(console.error);
 }
 
+/**
+ * @param {NodeListOf<Element>} nodeList
+ * @param {string} cmsId
+ */
 function updateDom(nodeList, cmsId) {
     // items, offset, limit, total
     const cache = cachedCms[cmsId];
@@ -42,7 +46,7 @@ function updateDom(nodeList, cmsId) {
         const object = script.objects.find(o => o.id == element.dataset.id);
 
         if (object == null) {
-            throw new Error("Unable to find Object " + element.dataset.id, element);
+            continue;
         }
 
         // If the object is not apart of the current CMS ID we loaded. Continue.
