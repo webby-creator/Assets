@@ -124,6 +124,8 @@ function compileChild(child, cacheItem) {
         case 'text':
             return compileTemplate(child.type, {
                 attrs: Object.entries(attrs).map(value => `${value[0]}="${value[1]}"`).join(' '),
+                marquee: null,
+                effect: null,
                 class_name: child.className,
                 tag: child.data.type_of == 'heading' ? `h${child.data.size + 1}` : 'p',
                 tag_class_name: `${child.data.type_of == 'heading' ? 'h' : 'p'}${child.data.size + 1}`,
